@@ -1,0 +1,46 @@
+.grid-item {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+
+  /* Alla stilar för länken */
+  & a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Krävs för att overlay-text ska positioneras rätt */
+
+    &:hover {
+      & img {
+        transform: scale(1.08);
+      }
+
+      & .overlay-text {
+        color: red;
+      }
+    }
+  }
+
+  /* Alla stilar för bilden */
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  /* Alla stilar för texten (nu permanent synlig längst ner) */
+  & .overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Sträcker sig över hela bildens bredd */
+    padding: 0.625rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    z-index: 2;
+    box-sizing: border-box; /* Ser till att padding inte gör texten bredare än bilden */
+  }
+}

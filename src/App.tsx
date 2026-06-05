@@ -1,13 +1,8 @@
+import ClassOptions from "./pages/ClassOptions";
 import "./App.css";
 
-import ClassOptions from "./pages/ClassOptions";
-
 function App() {
-  return (
-    <>
-      <ClassOptions />
-    </>
-  );
+  return <ClassOptions />;
 }
 
 export default App;

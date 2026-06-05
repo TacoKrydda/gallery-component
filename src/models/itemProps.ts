@@ -4,3 +4,7 @@ export type CardItemProps = {
   alt: string;
   title?: string;
 };
+
+export type GalleryProps = {
+  items: CardItemProps[];
+};

@@ -1,16 +1,15 @@
-import type { CardItemProps } from "../models/CardItemProps";
+import type { CardItemProps } from "../models/itemProps";
+import styles from "./CardItem.module.css";
 
-function CardItem({ id, src, alt, title }: CardItemProps) {
+export default function CardItem({ id, src, alt, title }: CardItemProps) {
   return (
-    <article id={id} className="grid-item" aria-label="Image Card">
+    <article id={id} className={styles["grid-item"]} aria-label="Image Card">
       <a href="/">
         <img src={src} alt={alt} />
+        <div className={styles["overlay-text"]}>
+          <h2>{title}</h2>
+        </div>
       </a>
-      <div className="overlay-text">
-        <h2>{title}</h2>
-      </div>
     </article>
   );
 }
-
-export default CardItem;
