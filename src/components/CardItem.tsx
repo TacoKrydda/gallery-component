@@ -5,7 +5,7 @@ export default function CardItem({ id, src, alt, title }: CardItemProps) {
   return (
     <article id={id} className={styles["grid-item"]} aria-label="Image Card">
       <a href="/">
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} loading="lazy" decoding="async" />
         <div className={styles["overlay-text"]}>
           <h2>{title}</h2>
         </div>
